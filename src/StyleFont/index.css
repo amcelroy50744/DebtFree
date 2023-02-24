@@ -1,0 +1,102 @@
+body {
+  background: royalblue;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+}
+
+
+
+h1 {
+  color: royalblue;
+  font-size: 1.4em;
+  font-weight: 700;
+  margin: 0;
+  text-align:center;
+  padding-bottom: 5px;
+}
+h3 {
+  text-align: center;
+}
+
+.debtForm {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 15px 15px 0px rgba(0,0,0,.1);
+  margin: 50px auto;
+  padding: 25px;
+  width: 300px;
+  height: 80vh;
+  overflow: scroll;
+}
+
+input {
+  background: #f5f5f5;
+  border: 0;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  max-width: 200px;
+  padding: 20px;
+  padding-left: 65px;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+.btn {
+  background: peachpuff;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0px 3px 0px #575757;
+  color: royalblue;
+  font-size: 1.2em;
+  padding: 20px;
+  position: relative;
+  text-shadow: 1px 1px 0px rgba(0,0,0,.1);
+  width: 100%;}
+  .btn active {
+    box-shadow:none;
+    top:3px;
+  }
+
+  #output {
+    border-radius: 6px;
+    color: #919191;
+    font-size: 28px;
+    font-weight: bold;
+    height: 34px;
+    margin: 0 auto;
+    padding: 11px;
+    text-align: center;
+    vertical-align: middle;
+    visibility: visible;
+  }
+  
+  .paymentList {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+  }
+  .paymentList h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .paymentCard {
+    text-align: center;
+    margin: 3rem 0;
+    overflow: hidden;
+    max-width: 450px;
+    width: 90%;
+    border-radius: 100px;
+    box-shadow: 0 22px 34px rgba(22,28,45,0.18);
+    color: royalblue;
+    background-color:peachpuff;
+  }
+  span {
+    color: #e08d3c;
+  }
+  
+  
