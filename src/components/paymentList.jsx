@@ -26,9 +26,6 @@ class PaymentList extends React.Component {
                 <div className="paymentItem">
                   Balance Remaining: $<span>{item.balance}</span>
                 </div>
-                <div className="paymentItem">
-                  Payments left : <span>{item.paymentsLeft}</span>
-                </div>
               </div>
             </CarouselItem>
           ))}

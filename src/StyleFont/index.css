@@ -21,6 +21,10 @@ h3 {
   text-align: center;
 }
 
+h4 {
+  padding-bottom: 0;
+}
+
 .debtForm {
   background: #fff;
   border-radius: 6px;
