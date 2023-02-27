@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DebtCalculator from "./DebtCalculator";
+import DebtCalculator from "../classes/DebtCalculator";
 import { v4 as uuid } from "uuid";
 import PaymentList from "./paymentList";
 
@@ -68,7 +68,7 @@ function DebtForm() {
   userBalance.loan = details.loan;
   balance = userBalance;
   userBalance.interest = details.interest;
-  let userInterest = userBalance.findInterest(balance,userBalance.interest)
+
   let minimumPayment = userBalance.minimumPayment(
     userBalance.loan,
     userBalance.interest
@@ -81,10 +81,8 @@ function DebtForm() {
     details.payment,
     userBalance.loanPayments
   );
-  let newInterest = userBalance.findInterest(remainingBalance,userBalance.interest)
-  balance = remainingBalance
+  balance = remainingBalance;
   paymentsLeft = (remainingBalance / details.payment).toFixed(0);
-
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -93,26 +91,34 @@ function DebtForm() {
     });
   };
 
+  const inputs = [
+    {
+      id: 1,
+      name: "loan",
+      inputMode: "decimal",
+      placeholder: "Enter Loan Amount",
+    },
+    { id: 2, name: "interest", placeholder: "Enter Loan Interest" },
+  ];
   return (
     <div>
       <div className="debtForm">
         <h1>Debt Free Calculator</h1>
-        <input
-          type="number"
-          name="loan"
-          inputMode="decimal"
-          autoComplete="off"
-          onChange={handleChange}
-          placeholder="Enter Loan Amount"
-        />
-        <input
-          type="number"
-          name="interest"
-          inputMode="decimal"
-          onChange={handleChange}
-          autoComplete="off"
-          placeholder="Enter Loan Interest"
-        />
+        {inputs.map((item) => {
+          const { id, name, inputMode, placeholder } = item;
+          return (
+            <input
+              key={id}
+              type="number"
+              name={name}
+              inputMode={inputMode && inputMode}
+              autoComplete="off"
+              onChange={handleChange}
+              placeholder={placeholder}
+            />
+          );
+        })}
+        
         <h3>
           Minimum Payment is: <span>${minimumPayment}</span>
         </h3>
@@ -120,7 +126,13 @@ function DebtForm() {
           Payments Left : <span>{paymentsLeft}</span>
         </h3>
         <h3>Enter Payment Amount</h3>
-        <input type="number" name="payment" inputMode="decimal" onChange={handleChange} />
+        <input
+          type="number"
+          name="payment"
+          inputMode="decimal"
+          onChange={handleChange}
+          placeholder="Enter Payment Amount"
+        />
         <button onClick={submitPayment} className="btn">
           Submit Payment
         </button>

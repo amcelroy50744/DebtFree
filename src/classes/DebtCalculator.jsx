@@ -1,8 +1,5 @@
-import React from "react";
-
-class DebtCalculator extends React.Component {
+class DebtCalculator  {
   constructor(debt, interest, loanPayments, payment) {
-    super();
     this.loan = debt;
     this.interest = interest;
     this.loanPayments = [];
